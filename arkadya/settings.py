@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
     'panel.apps.PanelConfig',
     'main_site.apps.MainSiteConfig',
 ]
@@ -106,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'tr'
 
 TIME_ZONE = 'UTC'
 
@@ -121,6 +122,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [                        # bu kısım sunucu ortamında silinir. sadece geliştirme ortamında kullanılır. sunucu kısmında sil.
+    BASE_DIR / "static",
+]
+
+LOGIN_REDIRECT_URL = '/panel/'                  # kullanıcı login olduğunda yönlenecek sayfa.
+LOGOUT_REDIRECT_URL = '/accounts/login/'                   # kullanıcı çıkış yaptığında login sayfasına otomatik yönlendirilir.
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

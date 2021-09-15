@@ -1,0 +1,322 @@
+{% load static %}
+
+<div id="sidebar" class="sidebar responsive ace-save-state">
+				<script type="text/javascript">
+					try{ace.settings.loadState('sidebar')}catch(e){}
+				</script>
+
+
+
+                 <!-- /.nav-list -->
+				<ul class="nav nav-list">
+					<li class="active hover">
+						<a href="{% url 'panel:panel_home' %}">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> Kontrol Paneli </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="hover">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text">
+								Cihaz İşlemleri
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="hover">
+								<a href="{% url 'panel:script_setting' %}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									    Temel Giriş-Çıkış Ayarları
+								</a>
+							</li>
+
+							<li class="hover">
+								<a href="{% url 'panel:panel_device_setting' %}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Temel Cihaz Ayarları
+								</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+
+					<li class="hover">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"> Raporlar </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="hover">
+								<a href="{% url 'panel:reports' %}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Geçiş Raporları
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="hover">
+								<a href="#">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Test test
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="hover">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-users"></i>
+							<span class="menu-text"> Kişi İşlemleri </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="hover">
+								<a href="{% url 'panel:add_flats' %}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Yeni Kişi Ekleme
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="hover">
+								<a href="{% url 'panel:show_flats' %}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Kişiler Listesi
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+
+						</ul>
+					</li>
+
+                    {% if user.is_staff %}
+					<li class="hover">
+						<a href="#">
+							<i class="menu-icon glyphicon glyphicon-user"></i>
+							<span class="menu-text"> Kullanıcı İşlemleri </span>
+                            <b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+                        <ul class="submenu">
+							<li class="hover">
+								<a href="{% url 'panel:add_user' %}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Yeni Kullanıcı Ekle
+								</a>
+								<b class="arrow"></b>
+							</li>
+
+							<li class="hover">
+								<a href="{% url 'panel:show_users' %}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Kullanıcı Düzenle
+								</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+                    {% endif %}
+
+					<li class="hover">
+						<a href="calendar.html">
+							<i class="menu-icon fa fa-calendar"></i>
+
+							<span class="menu-text">
+								Calendar
+
+								<span class="badge badge-transparent tooltip-error" title="2 Important Events">
+									<i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+								</span>
+							</span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="hover">
+						<a href="gallery.html">
+							<i class="menu-icon fa fa-picture-o"></i>
+							<span class="menu-text"> Gallery </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="hover">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-tag"></i>
+							<span class="menu-text"> More Pages </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="hover">
+								<a href="profile.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									User Profile
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="hover">
+								<a href="inbox.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Inbox
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="hover">
+								<a href="pricing.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Pricing Tables
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="hover">
+								<a href="invoice.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Invoice
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="hover">
+								<a href="timeline.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Timeline
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="hover">
+								<a href="search.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Search Results
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="hover">
+								<a href="email.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Email Templates
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="hover">
+								<a href="login.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Login &amp; Register
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="hover">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-file-o"></i>
+
+							<span class="menu-text">
+								Other Pages
+
+								<span class="badge badge-primary">5</span>
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="hover">
+								<a href="faq.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									FAQ
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="hover">
+								<a href="error-404.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Error 404
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="hover">
+								<a href="error-500.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Error 500
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="hover">
+								<a href="grid.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Grid
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="hover">
+								<a href="blank.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Blank Page
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+				</ul><!-- /.nav-list end-->
+
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+			</div> <!-- /.sidebar end-->
