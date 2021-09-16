@@ -1,0 +1,16 @@
+# Belirli bir dosyayı es geçmek için
+
+*.ini
+db.sqlite3
+# Belirli bir dizini es geçmek için
+venvIsyeri/
+
+# Belirli bir uzantılı dosyaları es geçmek için
+#*.styl
+#
+
+
+
+## log dosyalarını es geç ama error.log dosyaları hariç.
+#*.log
+#!errors.log
